@@ -53,8 +53,8 @@ http://steffen-mueller.net/modules/Math-Fractal-Curve/examples
 Furthermore, the generator may be either one of the aformentioned nested
 array references, or it may be an anonymous subroutine that returns such
 a data structure. This enables you to generate I<probalistic> fractal curves
-or generelly fractal curves whose trajectory depends on the distance any
-generator is to replace.
+or fractal curves whose trajectories depend on the distance any
+generator is to replace, etc.
 
 While the above feature makes the probablistic / dynamic curves non-fractal,
 they preserve some properties real fractals have. Please refer to the
@@ -91,7 +91,7 @@ use Carp;
 #use constant TWOPI  => 6.283185307179586476925286766559;
 #use constant HALFPI => 1.5707963267948966192313216916398;
 
-our $VERSION = '1.00';
+our $VERSION = '1.01';
 
 
 =head2 Constructor new

@@ -9,7 +9,7 @@ use Imager;
 
 unless(@ARGV) {
 	die <<HERE . <<'GENERATOR';
-generator5.pl - generate fractals from the following generator as PNG images.
+generator6.pl - generate fractals from the following generator as PNG images.
 
 Usage: $0 RecursionDepth
 
