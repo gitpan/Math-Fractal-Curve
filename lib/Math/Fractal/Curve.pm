@@ -86,12 +86,7 @@ use warnings;
 
 use Carp;
 
-# obsolete!
-#use constant PI     => 3.1415926535897932384626433832795;
-#use constant TWOPI  => 6.283185307179586476925286766559;
-#use constant HALFPI => 1.5707963267948966192313216916398;
-
-our $VERSION = '1.01';
+our $VERSION = '1.03';
 
 
 =head2 Constructor new
@@ -290,7 +285,15 @@ __END__
 
 =head1 AUTHOR
 
-Steffen Mueller, E<lt>fractal-module at steffen-mueller dot netE<gt>
+Steffen Mueller, E<lt>smueller@cpan.orgE<gt>
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright (C) 2003-2006 Steffen Mueller,
+E<lt>smueller@cpan.orgE<gt>
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself. 
 
 =head1 SEE ALSO
 

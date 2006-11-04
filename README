@@ -1,5 +1,5 @@
-Math::Fractal::Curve version 1.01
-=================================
+Math::Fractal::Curve
+====================
 
 This module is intended to generate 2-dimensional fractal curves such as
 the von Koch curve from simple generator functions.
@@ -32,8 +32,8 @@ http://steffen-mueller.net
 
 COPYRIGHT AND LICENCE
 
-Copyright (C) 2003 Steffen Mueller
-Author can be reached at fractal-module at steffen-mueller dot net
+Copyright (C) 2003-2006 Steffen Mueller
+Author can be reached at smueller@cpan.org
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself. 

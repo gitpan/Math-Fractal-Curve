@@ -9,18 +9,20 @@ use Imager;
 
 unless(@ARGV) {
 	die <<HERE . <<'GENERATOR';
-generator6.pl - generate fractals from the following generator as PNG images.
+generator7.pl - generate fractals from the following generator as PNG images.
 
 Usage: $0 RecursionDepth
 
 Generator: (The X's being start- and end points of the curve)
 HERE
 
-  O-------O
-  |       |
-  X       X
-  |       |
-  O-------O
+      O
+      |
+  X---O---X
+      |
+      O
+
+(The generator is rotated by 45°.)
 
 GENERATOR
 }
@@ -28,42 +30,44 @@ GENERATOR
 my $depth = shift @ARGV;
 
 # Filename for image.
-my $filename = sprintf('Generator6-Depth%02i.png', $depth);
+my $filename = sprintf('Generator7-Depth%02i.png', $depth);
 
-#  O-------O
-#  |       |
-#  X       X
-#  |       |
-#  O-------O
-my $generator = [
-	[0,	1/4,	0,	-1/4	],
-	[0,	-1/4,	1,	-1/4	],
-	[1,	-1/4,	1,	1/4	],
-	[1,	1/4,	0,	1/4	],
-];
-
+#      O
+#      |
+#  X---O---X
+#      |
+#      O
+my $generator = sub {
+	[
+			[0,   0,               1/2, 0            ],
+			[1/2, 0,             1, 0           ],
+			[1/2, 0,            1/2, 1/2                ],
+			[1/2, 0,            1/2, -1/2                ],
+	]
+};
+	
 # New curve generator
 my $curve_gen = Math::Fractal::Curve->new(generator => $generator);
 
 # New curve
 my $curve = $curve_gen->line(
-	start => [-1, 0],
-	end   => [1, 0],
+	start => [-sqrt(2), -sqrt(2)],
+	end   => [sqrt(2), sqrt(2)],
 );
 
 
 # Image dimensions
 my $max_x = 1000;
-my $max_y = 1000;
+my $max_y = 700;
 
 my $img = Imager->new(xsize => $max_x, ysize => $max_y);
 
 my $edges = $curve->fractal($depth);
 
-my $color = Imager::Color->new( 200, 100, 100);
+my $color = Imager::Color->new( 255, 255, 100 );
 
 # Scale dimensions by 200.
-@$_ = map $_*200, @$_ foreach @$edges;
+@$_ = map $_*170, @$_ foreach @$edges;
 
 foreach (@$edges) {
 	$img->line(
